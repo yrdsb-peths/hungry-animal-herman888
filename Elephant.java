@@ -72,6 +72,25 @@ public class Elephant extends Actor
             facing = "right";
         }
         
+        if (Greenfoot.mouseClicked(null))
+        {
+            MouseInfo mouse = Greenfoot.getMouseInfo();
+            if (mouse != null)
+            {
+                int mouseX = mouse.getX();
+                if (mouseX < getX())
+                {
+                    move(-2);
+                    facing = "left";
+                }
+                else if (mouseX > getX())
+                {
+                    move(2);
+                    facing = "right";
+                }
+            }
+        }
+        
         eat();
         
         animateElephant();
@@ -91,4 +110,6 @@ public class Elephant extends Actor
         
         
     }
+    
+   
 }

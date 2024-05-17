@@ -29,8 +29,9 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 50);
     
         createApple();
+       
         
-        levelLabel = new Label(0,80);
+        levelLabel = new Label(1,80);
         addObject(levelLabel, 550,50);
         
         
@@ -46,21 +47,21 @@ public class MyWorld extends World
     
     
     
-    public void increaseScore()
-    
-    
+    public void increaseScore() 
     {
         score++;
         scoreLabel.setValue(score);
-        
-        
-        
-        if(score % 5 == 0)
+
+        if (score % 5 == 0) 
         {
-            level +=1;
+            level+=1;
             levelLabel.setValue(level);
-            
         }
+    }      
+    
+    public void increaseLevel()
+    {
+        
     }
     
     

@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elephant extends Actor
 {
+    private int speed = 2;
     GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[7];
     GreenfootImage[] idleLeft = new GreenfootImage[7];
@@ -63,12 +64,12 @@ public class Elephant extends Actor
     {
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-2);
+            move(-speed);
             facing = "left";
         }
         else if(Greenfoot.isKeyDown("right"))
         {
-            move(2);
+            move(speed);
             facing = "right";
         }
         
@@ -80,12 +81,12 @@ public class Elephant extends Actor
                 int mouseX = mouse.getX();
                 if (mouseX < getX())
                 {
-                    move(-2);
+                    move(-speed);
                     facing = "left";
                 }
                 else if (mouseX > getX())
                 {
-                    move(2);
+                    move(speed);
                     facing = "right";
                 }
             }
@@ -108,7 +109,27 @@ public class Elephant extends Actor
             elephantSound.play();
         }
         
+        if(isTouching(Banana.class))
+        {
+            eatBanana();
+            removeTouching(Banana.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.increaseScore();
+            elephantSound.play();
+        }
         
+        
+    }
+    
+    private void eatBanana()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        int currentLevel = world.getLevel();
+        
+        
+        speed = 2 * currentLevel;
+        
+       
     }
     
    

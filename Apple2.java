@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Apple food
+ * Apple2 food
  * 
  * @herman 
  * @version April 2024
  */
-public class Apple extends Actor
+public class Apple2 extends Actor
 {
-    private int speed = 1;
+    int speed = 1;
     int scoreValue;
     
 
     /**
-     * Act - do whatever the Apple wants to do. This method is called whenever
+     * Act - do whatever the Apple2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
@@ -34,10 +34,4 @@ public class Apple extends Actor
     {
         return scoreValue;
     }
-
-    public void setSpeed(int spd)
-    {
-        speed = spd;
-    }
-    
 }

@@ -13,6 +13,8 @@ public class MyWorld extends World
     Label scoreLabel;
     Label levelLabel;
     int level = 1;
+    private boolean isGameOver = false;
+    private int gameOverDelay = 0;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -38,9 +40,20 @@ public class MyWorld extends World
         addObject(levelLabel, 550,50);
     }
     
+    public void act()
+    {
+        if (isGameOver)
+        {
+            gameOverDelay--;
+            if (gameOverDelay <= 0)
+            {
+                Greenfoot.setWorld(new TitleScreen());
+            }
+        }
+    }
+    
     public void gameOver()
     {
-        
         if (score > highestScore)
         {
             highestScore = score;
@@ -49,11 +62,8 @@ public class MyWorld extends World
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
         
-        Greenfoot.stop();
-        
-        Greenfoot.delay(100); 
-        
-        Greenfoot.setWorld(new TitleScreen());
+        isGameOver = true;
+        gameOverDelay = 300; // Set delay to 300 frames (approx. 5 seconds if 60 FPS)
     }
     
     public void increaseScore() 

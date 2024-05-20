@@ -10,7 +10,7 @@ public class Elephant extends Actor
 {
     private int speed = 2;
     GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
-    Greenfootsound elephantSound1 = new GreenfootSound("elephantdefeat.mp3");
+    GreenfootSound elephantSound1 = new GreenfootSound("elephantdefeat.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[7];
     GreenfootImage[] idleLeft = new GreenfootImage[7];
     
@@ -121,8 +121,11 @@ public class Elephant extends Actor
         
         if(isTouching(Apple2.class))
         {   
+            elephantSound1.play();
+        
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
+            
         }
     }
     

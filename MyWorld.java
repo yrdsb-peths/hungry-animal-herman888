@@ -31,7 +31,7 @@ public class MyWorld extends World
     
        
         createApple();
-        //createRandomApple();
+        
        
         
         levelLabel = new Label(1,80);
@@ -40,7 +40,7 @@ public class MyWorld extends World
     
     public void gameOver()
     {
-        // Update the highest score if the current score is greater
+        
         if (score > highestScore)
         {
             highestScore = score;
@@ -50,6 +50,10 @@ public class MyWorld extends World
         addObject(gameOverLabel, 300, 200);
         
         Greenfoot.stop();
+        
+        Greenfoot.delay(100); 
+        
+        Greenfoot.setWorld(new TitleScreen());
     }
     
     public void increaseScore() 

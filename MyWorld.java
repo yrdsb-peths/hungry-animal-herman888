@@ -8,6 +8,7 @@ import greenfoot.*;
  */
 public class MyWorld extends World
 {
+    public static int highestScore = 0;
     public int score = 0;
     Label scoreLabel;
     Label levelLabel;
@@ -39,8 +40,16 @@ public class MyWorld extends World
     
     public void gameOver()
     {
+        // Update the highest score if the current score is greater
+        if (score > highestScore)
+        {
+            highestScore = score;
+        }
+        
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
+        
+        Greenfoot.stop();
     }
     
     public void increaseScore() 
@@ -83,7 +92,7 @@ public class MyWorld extends World
         }
         
         
-    
+
     
         //fruit.setSpeed(level); // Set speed based on the level
         int x = Greenfoot.getRandomNumber(600);
@@ -103,6 +112,11 @@ public class MyWorld extends World
     public int getLevel()
     {
         return level;
+    }
+    
+    public static int getHighestScore()
+    {
+        return highestScore;
     }
     
 }

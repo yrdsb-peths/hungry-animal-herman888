@@ -60,6 +60,11 @@ public class MyWorld extends World
     {
         score++;
         scoreLabel.setValue(score);
+        
+        if (score % 7 == 0) 
+        {   
+            createApple2();
+        }
 
         if (score % 5 == 0) 
         {
@@ -68,6 +73,14 @@ public class MyWorld extends World
             createBanana();
         }
     }      
+    public void createApple2()
+    {
+        Apple2 apple2 = new Apple2();
+        apple2.setSpeed(level);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(apple2, x, y);
+    }
     
     /**
      * Create a new apple at random location

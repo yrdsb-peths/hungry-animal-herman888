@@ -19,7 +19,7 @@ public class TitleScreen extends World
         super(600, 400, 1); 
         
         Label highestScoreLabel = new Label("Highest Score: " + MyWorld.getHighestScore(), 60);
-        addObject(highestScoreLabel, getWidth() / 2, getHeight() / 2);
+        addObject(highestScoreLabel, getWidth() / 2, getHeight() / 2 + 25);
 
         
         prepare();
@@ -51,7 +51,7 @@ public class TitleScreen extends World
         Label label2 = new Label("Use \u2190 and \u2192 to Move", 40);
         addObject(label2,290,376);
 
-        Label label3 = new Label("Hungy Elephant", 60);
+        Label label3 = new Label("Hungry Elephant", 60);
         addObject(label3,253,69);
 
       

@@ -19,7 +19,7 @@ public class TitleScreen extends World
         super(600, 400, 1); 
         
         Label highestScoreLabel = new Label("Highest Score: " + MyWorld.getHighestScore(), 60);
-        addObject(highestScoreLabel, getWidth() / 2, getHeight() / 2 + 25);
+        addObject(highestScoreLabel, getWidth() / 2, getHeight() / 2 + 2);
 
         
         prepare();

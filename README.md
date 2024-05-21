@@ -24,7 +24,7 @@ After every 5 points are added to the score the elephants speed doubles by x lev
 Levels:
 After every 5 points added to the score the elephant moves on to next level where it gets harder as well as it tells you which level you are on in top right corner
 
-Title Screen: 
+Title Screen:
 The title screen displays the users highest score in the session. As well as the basic instructions to play the Game
 
 Game Over Screen: When the game is over it displays game over then proceeds to go to the title screen
@@ -35,6 +35,16 @@ Idle Animation - The elephant has idle animations facing both left and right dir
 
 Sound Effects:
 The Elephant makes a noise when it eats an apple.
+The elephant makes a diffirent noise when it eats the posionous apple
+
+Enemy:
+Poisonous Apple is spawned every 7 points and when its eaten game is over:
+
+Added A delay between when game is over back to the main title screen page
+
+Added A High Score On the title screen that saves every session
+
+Array Implemented is folder called "elephantIdle" its for the sprites of images of the elephant
 
 
 
